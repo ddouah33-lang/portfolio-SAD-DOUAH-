@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="core" aria-hidden="true"></canvas>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="#home" class="logo" id="logo"></a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+  <nav id="menu">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+    <a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="grid-floor" aria-hidden="true"></div>
+    <div class="hero-text">
+      <p class="mono" id="hello"></p>
+      <h1>Software Engineering Student</h1>
+      <p class="lead">I build systems, interfaces and digital experiences.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects" data-magnetic>Explore my work</a>
+        <a class="btn" href="cv.pdf" download data-magnetic>Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="sec about">
+    <figure class="portrait reveal" id="portrait"><img id="photo" src="photo.jpg" alt="" width="800" height="1000" loading="lazy"><i class="scan"></i></figure>
+    <div class="reveal">
+      <p class="mono tag">01 — About me</p>
+      <h2>Building software, one system at a time.</h2>
+      <p class="muted">Je suis étudiant en ingénierie logicielle passionné par le développement web, la programmation, les bases de données, les systèmes et la conception de solutions numériques.</p>
+    </div>
+    <div class="stack reveal" id="stack"></div>
+  </section>
+
+  <section id="skills" class="sec col">
+    <div class="reveal"><p class="mono tag">Skills</p><h2>A system of modules.</h2>
+    <p class="muted">Hover a node to trace its connections.</p></div>
+    <div class="map reveal"><canvas id="constellation"></canvas><div class="legend" id="legend"></div></div>
+  </section>
+
+  <section id="projects" class="sec col">
+    <div class="reveal"><p class="mono tag">02 — Selected projects</p><h2>Things I have built.</h2></div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="journey" class="sec col">
+    <div class="reveal"><p class="mono tag">Journey</p><h2>My Engineering Journey</h2></div>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <section id="terminal" class="sec col">
+    <div class="term reveal">
+      <div class="term-bar"><i></i><i></i><i></i><span class="mono">terminal://about-me</span></div>
+      <div class="term-body mono" id="term-out"></div>
+      <label class="term-in mono">$ <input id="term-input" autocomplete="off" spellcheck="false" placeholder="type help"></label>
+    </div>
+  </section>
+
+  <section id="contact" class="sec col">
+    <div class="reveal"><p class="mono tag">Contact</p><h2>Let's build something meaningful.</h2></div>
+    <div class="contact reveal">
+      <ul class="links" id="links"></ul>
+      <form id="form" novalidate>
+        <input name="name" placeholder="Name" required aria-label="Name">
+        <input name="email" type="email" placeholder="Email" required aria-label="Email">
+        <textarea name="message" rows="4" placeholder="Message" required aria-label="Message"></textarea>
+        <button class="btn primary" data-magnetic>Send message →</button>
+        <p class="mono status" id="status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<dialog id="pd" class="pd"><form method="dialog"><button class="x" aria-label="Close">×</button></form>
+  <p class="mono tag" id="pd-n"></p><h3 id="pd-t"></h3><p class="muted" id="pd-d"></p><div class="chips" id="pd-c"></div>
+  <a class="btn primary" id="pd-l" target="_blank" rel="noopener">View on GitHub</a></dialog>
+<footer class="mono" id="foot"></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
